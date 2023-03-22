@@ -24,7 +24,13 @@ App.use(
 );
 
 App.use("/api/v1", userRoute);
-
+App.get("/",async(req,res)=>{
+  res.status(200).json({
+    message:{
+      getapi:"server is working fine "
+    }
+  })
+})
 App.listen(process.env.PORT, async () => {
   await db();
   console.log(`server is running on port ${process.env.PORT}`);
