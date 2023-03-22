@@ -56,7 +56,7 @@ const login = async (req, res) => {
       });
     }
     const token = await user.genrateToken();
-    await res.cookie("Token", token, times);
+    await res.cookie("Token", token, cookieConfig);
     return res.status(200).json({
       success: true,
       user,
