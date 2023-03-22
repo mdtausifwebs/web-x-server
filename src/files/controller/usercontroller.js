@@ -9,6 +9,7 @@ const register = async (req, res) => {
       expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
       secure: true,
       sameSite: 'none',
+      SameSite:strict,
     };
     if (user) {
       return res.status(400).json({
